@@ -39,4 +39,5 @@ jobs:
         with:
           folder: dist # 这里的 dist 是你构建项目的输出文件夹，适当调整为你的构建输出路径
           target_branch: gh-pages # 部署到 gh-pages 分支
-          token: ${{ secrets.GITHUB_TOKEN }} # 自动化部署时需要 GitHub Token
+          # token: ${{ secrets.GITHUB_TOKEN }} # 自动化部署时需要 GitHub Token
+          clean: true
