@@ -20,4 +20,5 @@ export default defineConfig({
   build: {
     outDir: 'dist', // 设置输出目录，默认为 `dist`
   },
+  base: '/wifi-QR-code/'
 })
