@@ -86,7 +86,6 @@ const generateQRcode = () => {
 </script>
 
 <style scoped>
-/* Container */
 .container {
   font-family: 'Arial', sans-serif;
   width: 90%;
@@ -98,15 +97,12 @@ const generateQRcode = () => {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
-/* Heading */
 h1 {
   font-size: 24px;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Form styling */
 .form {
   display: flex;
   flex-direction: column;
