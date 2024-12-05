@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 或者你希望触发部署的分支，如 master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. 设置 Node.js 环境
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # 你可以根据项目需求调整 Node.js 版本
+
+      # 3. 安装 pnpm
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
+      # 4. 安装项目依赖
+      - name: Install dependencies
+        run: pnpm install
+
+      # 5. 构建项目
+      - name: Build project
+        run: pnpm run build # 请根据你的项目配置调整构建命令
+
+      # 6. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          folder: dist # 这里的 dist 是你构建项目的输出文件夹，适当调整为你的构建输出路径
+          target_branch: gh-pages # 部署到 gh-pages 分支
+          token: ${{ secrets.GITHUB_TOKEN }} # 自动化部署时需要 GitHub Token
