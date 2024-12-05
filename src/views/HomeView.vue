@@ -59,7 +59,6 @@ const generateQRcode = () => {
   }
 
   // console.log('Wi-Fi QR Code String:', wifiStr) // Log to check if Wi-Fi string is correct
-
   if (canvasRef.value) {
     size.value = 300
     qrCodeGenerated.value = true
